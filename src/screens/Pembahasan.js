@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View,Text, Image, TouchableOpacity, AsyncStorage } from 'react-native';
 import BackButton from '../components/BackButton';
 
-export default class LatihanSoal extends Component{
+export default class Pembahasan extends Component{
   constructor(props){
     super(props)
     this.state={
@@ -61,12 +61,6 @@ export default class LatihanSoal extends Component{
     this.setState({
       myanswer: myanswer
     })
-  }
-  _pembahasan = () =>{
-    const soalke = this.state.soalke
-    const myanswer = this.state.myanswer
-    const jawaban = this.state.jawaban
-    this.props.navigation.navigate('Pembahasan',{ soalke , myanswer, jawaban ,Pembahasan})
   }
   render(){
     return(
@@ -141,7 +135,7 @@ export default class LatihanSoal extends Component{
           </TouchableOpacity>
         </View>
         <View style={{ alignItems: 'flex-end' , marginTop: 100, marginRight: 40}}>
-          <TouchableOpacity onPress={() => this._pembahasan}>
+          <TouchableOpacity>
             <Image style={{ width: 50, height: 50}} source={require('../assets/next_quiz.png')} />
           </TouchableOpacity>
         </View>

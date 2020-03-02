@@ -19,8 +19,8 @@ import {
   Perwakilan,
   Politik,
   Video,
+  Pembahasan,
 } from './screens';
-
 const Router = createStackNavigator(
   {
     HomeScreen,
@@ -39,10 +39,11 @@ const Router = createStackNavigator(
     Pentingnya,
     Perjanjian,
     Perwakilan,
-    Video
+    Video,
+    Pembahasan,
   },
   {
-    initialRouteName: 'Video',
+    initialRouteName: 'Dashboard',
     headerMode: 'none',
   }
 );

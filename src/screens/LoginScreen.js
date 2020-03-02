@@ -13,7 +13,7 @@ const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState({ value: '', error: '' });
   const [password, setPassword] = useState({ value: '', error: '' });
 
-  const _onLoginPressed = () => {
+  const _onLoginPressed =  async () => {
     const emailError = emailValidator(email.value);
     const passwordError = passwordValidator(password.value);
 

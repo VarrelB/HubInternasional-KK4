@@ -14,7 +14,7 @@ const Dashboard = ({ navigation }) => (
     <ButtonMateri mode="contained" onPress={() => navigation.navigate('Materi')}>
       Materi
     </ButtonMateri>
-    <ButtonLatSoal mode="contained" onPress={() => navigation.navigate('LatihanSoal')}>
+    <ButtonLatSoal mode="contained" onPress={() => navigation.navigate('LatihanSoal',{nomer: 0})}>
       Latihan Soal
     </ButtonLatSoal>
     <ButtonKuis mode="contained" onPress={() => navigation.navigate('Kuis')}>
