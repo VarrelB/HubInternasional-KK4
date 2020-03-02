@@ -1,5 +1,6 @@
 import React, { memo, useState } from 'react';
-import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity, StyleSheet, Text, View, ToastAndroid, AsyncStorage } from 'react-native';
+import * as SecureStore from 'expo-secure-store';
 import Loginbackground from '../components/Loginbackground';
 import Header from '../components/Header';
 import Button from '../components/Button';
@@ -20,9 +21,35 @@ const LoginScreen = ({ navigation }) => {
       setEmail({ ...email, error: emailError });
       setPassword({ ...password, error: passwordError });
       return;
+    }else{
+      fetch('http://3.92.200.123:9000/api/users/v1', {
+        method: 'POST',
+        headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization':'Basic a3Ata2s0OmFiaWQtZ2Fucy1iYW5nZXQ='
+        },
+        body: JSON.stringify({
+          email: email.value,
+          password: password.value,
+        })
+      })
+      .then(respoonse => respoonse.json())
+      .then(responseJson => {
+        // console.log(responseJson)
+        // console.log(responseJson.data)
+        if(responseJson.data.length > 0){
+          AsyncStorage.setItem("TOKEN", responseJson.data)
+          navigation.navigate('Dashboard');
+        }
+
+      })
+      .catch(error => {
+        console.error(error);
+        throw error;
+      });
     }
 
-    navigation.navigate('Dashboard');
   };
 
   return (

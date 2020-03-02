@@ -42,7 +42,7 @@ const Router = createStackNavigator(
     Video
   },
   {
-    initialRouteName: 'HomeScreen',
+    initialRouteName: 'Video',
     headerMode: 'none',
   }
 );

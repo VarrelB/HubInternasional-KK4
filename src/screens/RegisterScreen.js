@@ -27,9 +27,32 @@ const RegisterScreen = ({ navigation }) => {
       setEmail({ ...email, error: emailError });
       setPassword({ ...password, error: passwordError });
       return;
-    }
+    }else{
+      fetch('http://3.92.200.123:9000/api/users/v1/register', {
+        method: 'POST',
+        headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization':'Basic a3Ata2s0OmFiaWQtZ2Fucy1iYW5nZXQ='
+        },
+        body: JSON.stringify({
+          name: name.value,
+          email: email.value,
+          password: password.value,
+        }),
+      })
+      .then(respoonse => respoonse.json())
+      .then(responseJson => {
+        console.log(responseJson)
+        if(responseJson.code == 200){
+          navigation.navigate('LoginScreen');
+        }
 
-    navigation.navigate('LoginScreen');
+      })
+      .catch(error => {
+        // console.error(error);
+      });
+    }
   };
 
   return (
