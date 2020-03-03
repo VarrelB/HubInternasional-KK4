@@ -16,6 +16,4 @@ export { default as Perwakilan } from './Perwakilan';
 export { default as Politik } from './Politik';
 export { default as Video} from './Video';
 export { default as Pembahasan} from './Pembahasan';
-// export { default as Quiz} from './Quiz';
-
-
+export { default as DoneLatihan} from './DoneLatihan';

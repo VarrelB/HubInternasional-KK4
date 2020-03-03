@@ -20,6 +20,7 @@ import {
   Politik,
   Video,
   Pembahasan,
+  DoneLatihan
 } from './screens';
 const Router = createStackNavigator(
   {
@@ -41,6 +42,7 @@ const Router = createStackNavigator(
     Perwakilan,
     Video,
     Pembahasan,
+    DoneLatihan
   },
   {
     initialRouteName: 'Dashboard',

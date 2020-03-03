@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
 import { View,Text, Image, TouchableOpacity, AsyncStorage } from 'react-native';
 import BackButton from '../components/BackButton';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default class Pembahasan extends Component{
   constructor(props){
     super(props)
     this.state={
-      title:'',
-      a:'',
-      b:'',
-      c:'',
-      d:'',
-      jawaban:'',
-      myanswer:'',
+      jwb: true,
       soalke: '',
-      max: ''
+      max: 0
     }
   }
   componentDidMount(){
@@ -23,122 +18,90 @@ export default class Pembahasan extends Component{
   _getData = async () => {
     const { params } = this.props.navigation.state;
     const soalke = params ? params.nomer : 0
+    const Pembahasan = params ? params.Pembahasan : 0
+    const jawaban = params ? params.jawaban : 0
+    const myanswer = params ? params.myanswer : 0
+    const max = params ? params.max : 0
+    console.log(max)
     const token = await AsyncStorage.getItem('TOKEN')
-    console.log(token)
-    fetch('http://3.92.200.123:9000/api/varrel/soal/v1?type=latihan', {
-        method: 'GET',
-        headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}` 
-        }
+    if(myanswer == jawaban){
+      console.log("BENER")
+      this.setState({
+        soalke: soalke,
+        Pembahasan: Pembahasan,
+        jwb: true,
+        max: max
       })
-      .then(respoonse => respoonse.json())
-      .then(responseJson => {
-        console.log(responseJson)
-        // console.log(responseJson.data)
-        if(responseJson.code == 200){
-          // AsyncStorage.setItem("TOKEN", responseJson.data)
-          this.setState({
-            title:responseJson.data[soalke].title,
-            a: responseJson.data[soalke].pilihan[0],
-            b: responseJson.data[soalke].pilihan[1],
-            c: responseJson.data[soalke].pilihan[2],
-            d:responseJson.data[soalke].pilihan[3],
-            jawaban: responseJson.data[soalke].jawaban,
-            soalke: soalke,
-            max: responseJson.data.length
-          })
-        }
+    }else{
+      console.log("salah")
+      this.setState({
+        soalke: soalke,
+        Pembahasan: Pembahasan,
+        jwb: false,
+        max: max
 
       })
-      .catch(error => {
-        console.error(error);
-        throw error;
-      });
+    }
+    console.log(token)
   }
-  _choice = (myanswer) =>{
-    this.setState({
-      myanswer: myanswer
-    })
+  _next = () =>{
+    console.log(this.state.max)
+    console.log(this.state.soalke)
+
+    if(this.state.max > this.state.soalke + 1){
+      const nomer = this.state.soalke + 1
+      this.props.navigation.replace('LatihanSoal',{ nomer })
+    }else{
+      this.props.navigation.navigate('DoneLatihan')
+
+    }
+
   }
   render(){
     return(
      <View style={{flex:1}}>
-        <BackButton goBack={()=> this.props.navigation.navigate('')}/>
-        <Text style={{ marginTop: 100, paddingLeft: 50, borderBottomColor: '#283293', borderBottomWidth: 1}}>{`Latihan ${this.state.soalke +1}/${this.state.max}`}</Text>
-        <View style={{ paddingLeft: 33, paddingRight: 33, marginTop:30}}>
-          <Text>{this.state.title}</Text>
-        </View>
-        <View style={{ paddingLeft: 48, paddingRight: 48, marginTop: 50}}>
-          <TouchableOpacity onPress={()=>this._choice(0)}>
-            <View style={{ 
-                width: 280,
-                borderRadius: 10, borderWidth: 2,
-                alignItems: 'center',
-                borderColor: '#25D16A',
-                backgroundColor: this.state.myanswer === 0 ? '#25D16A' : '#FFf', 
-                alignSelf:'baseline',
-                justifyContent: 'center'}}>
-              <Text style={{
-                 color: this.state.myanswer === 0 ? '#FFF' : '#25D16A',
-                 fontSize: 18
-                }}>{this.state.a}</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={()=>this._choice(1)}>
-            <View style={{ 
-                width: 280,
-                marginTop: 30,
-                backgroundColor: this.state.myanswer === 1 ? '#25D16A' : '#FFf', 
-                borderRadius: 10, borderWidth: 2,
-                alignItems: 'center',
-                borderColor: '#25D16A',
-                alignSelf:'baseline',
-                justifyContent: 'center'}}>
-              <Text style={{
-                 color: this.state.myanswer === 1 ? '#FFF' : '#25D16A',
-                 fontSize: 18}}>{this.state.b}</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={()=>this._choice(2)}>
-            <View style={{ 
-                width: 280,
-                marginTop: 30,
-                backgroundColor: this.state.myanswer === 2 ? '#25D16A' : '#FFf', 
+       <ScrollView>
+        {this.state.jwb ? (
+          <View style={{ justifyContent: 'center', alignItems: 'center', marginTop:110}}>
+              <Image style={{ width: 130, height: 130}} source={require('../assets/pembahasan_benar.png')} />
+              <Text style={{fontSize: 27, color: '#21BF73'}}>
+              BENAR!
+              </Text>
+          </View>
+        ) : (
+          <View style={{ justifyContent: 'center', alignItems: 'center', marginTop:110}}>
+              <Image style={{ width: 130, height: 130}} source={require('../assets/pembahasan_salah.png')} />
+              <Text style={{fontSize: 27, color: '#F0134D'}}>
+                SALAH!
+              </Text>
+          </View>
+        )}
 
-                borderRadius: 10, borderWidth: 2,
-                alignItems: 'center',
-                borderColor: '#25D16A',
-                alignSelf:'baseline',
-                justifyContent: 'center'}}>
-              <Text style={{
-                color: this.state.myanswer === 2 ? '#FFF' : '#25D16A',
-               fontSize: 18}}>{this.state.c}</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={()=>this._choice(3)}>
-            <View style={{ 
-                width: 280,
-                marginTop: 30,
-                backgroundColor: this.state.myanswer === 3 ? '#25D16A' : '#FFf', 
-
-                borderRadius: 10, borderWidth: 2,
-                alignItems: 'center',
-                borderColor: '#25D16A',
-                alignSelf:'baseline',
-                justifyContent: 'center'}}>
-              <Text style={{
-                color: this.state.myanswer === 3 ? '#FFF' : '#25D16A',
-                fontSize: 18}}>{this.state.d}</Text>
-            </View>
-          </TouchableOpacity>
+        <Text style={{fontSize: 20 ,paddingLeft: 42, marginTop: 27}}>
+          Pembahasan : 
+        </Text>
+        <View style={{
+          borderRadius: 8,
+          elevation: 5,
+          paddingLeft: 16,
+          paddingRight: 16,
+          width: 288,
+          marginLeft: 46,
+          marginTop: 10,
+          paddingTop: 25,
+          paddingBottom: 25, 
+          alignSelf:'baseline',
+          borderColor: '#EBEBEB',
+          borderWidth: 1}}>
+            <Text>{this.state.Pembahasan}</Text>
         </View>
-        <View style={{ alignItems: 'flex-end' , marginTop: 100, marginRight: 40}}>
-          <TouchableOpacity>
-            <Image style={{ width: 50, height: 50}} source={require('../assets/next_quiz.png')} />
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity onPress={this._next}>
+            <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 36}}>
+              <Image style={{ width: 180, height: 60}} source={require('../assets/next_pembahasan.png')} />
+            </View>
+        </TouchableOpacity>
+       </ScrollView>
+       
      </View>
     );
   }
