@@ -51,15 +51,35 @@ export default class Kuis extends Component{
     })
   }
   _next = () =>{
-    console.log(this.state.soalke)
-    this.setState({
-      soalke: this.state.soalke + 1,
-      allanswer: [...this.state.allanswer, this.state.myanswer],
-      myanswer: '',
-
-    })
-    // this.forceUpdate()
-    console.log(this.state.soalke)
+    if(this.state.allanswer.length ===0){
+      this.setState({
+        soalke: this.state.soalke + 1,
+        allanswer: [...this.state.allanswer, this.state.myanswer],
+        myanswer: '',
+  
+      })
+    }else{
+      this.state.allanswer[this.state.soalke] = this.state.myanswer
+      this.setState({
+        soalke: this.state.soalke + 1,
+        myanswer: this.state.allanswer.length-1 - this.state.soalke ===0 ? '' : this.state.allanswer[this.state.soalke +1]
+  
+      })
+    }
+    
+  }
+  _prev = async () =>{
+    if(this.state.soalke === 0){
+      return;
+    }else{
+      this.state.allanswer[this.state.soalke] = await this.state.myanswer
+      this.setState({
+        soalke: this.state.soalke -1,
+        myanswer: this.state.allanswer[this.state.soalke -1],
+  
+      })
+    }
+  
   }
   render(){
     if(this.state.loading){
@@ -67,7 +87,6 @@ export default class Kuis extends Component{
     }
     return(
      <View style={{flex:1}}>
-       {console.log(this.state.data)}
         <BackButton goBack={()=> this.props.navigation.navigate('')}/>
         <Text style={{ marginTop: 100, paddingLeft: 50, borderBottomColor: '#283293', borderBottomWidth: 1}}>{`Latihan ${this.state.soalke +1}/${this.state.data.length}`}</Text>
         <ScrollView>
@@ -144,11 +163,19 @@ export default class Kuis extends Component{
               </View>
             </TouchableOpacity>
           </View>
-          <View style={{ alignItems: 'flex-end' , marginTop: 100, marginRight: 40}}>
-            <TouchableOpacity onPress={this._next}>
-              <Image style={{ width: 50, height: 50}} source={require('../assets/next_quiz.png')} />
-            </TouchableOpacity>
+          <View style={{ flexDirection:'row', marginTop: 100,  paddingLeft: 40, paddingRight: 40}}>
+            <View style={{  flex:1, alignItems: 'flex-start'}}>
+              <TouchableOpacity onPress={this._prev}>
+                <Image style={{ width: 50, height: 50}} source={require('../assets/back_quiz.png')} />
+              </TouchableOpacity>
+            </View>
+            <View style={{  flex:1, alignItems: 'flex-end'}}>
+              <TouchableOpacity  onPress={this._next}>
+                <Image style={{ width: 50, height: 50}} source={require('../assets/next_quiz.png')} />
+              </TouchableOpacity>
+            </View>
           </View>
+         
         </ScrollView>
         
      </View>
