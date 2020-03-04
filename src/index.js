@@ -21,7 +21,8 @@ import {
   Video,
   Pembahasan,
   DoneLatihan,
-  Nilai
+  Nilai,
+  AboutUs
 } from './screens';
 const Router = createStackNavigator(
   {
@@ -44,10 +45,11 @@ const Router = createStackNavigator(
     Video,
     Pembahasan,
     DoneLatihan,
-    Nilai
+    Nilai,
+    AboutUs
   },
   {
-    initialRouteName: 'Dashboard',
+    initialRouteName: 'HomeScreen',
     headerMode: 'none',
   }
 );

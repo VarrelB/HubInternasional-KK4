@@ -18,3 +18,5 @@ export { default as Video} from './Video';
 export { default as Pembahasan} from './Pembahasan';
 export { default as DoneLatihan} from './DoneLatihan';
 export { default as Nilai} from './Nilai';
+export { default as AboutUs} from './AboutUs';
+

@@ -93,6 +93,11 @@ export default class Kuis extends Component{
     }
     return(
      <View style={{flex:1}}>
+       <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70, flexDirection: 'row'}}>
+          <View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-end'}}>
+              <Text style={{ fontSize: 20,color: "#fff"}}>KUIS</Text>
+          </View>
+        </View>
         <Text style={{ marginTop: 100, paddingLeft: 50, borderBottomColor: '#283293', borderBottomWidth: 1}}>{`Latihan ${this.state.soalke +1}/${this.state.data.length}`}</Text>
         <ScrollView>
           <View style={{ paddingLeft: 33, paddingRight: 33, marginTop:30}}>
@@ -106,6 +111,8 @@ export default class Kuis extends Component{
                   alignItems: 'center',
                   paddingLeft: 40,
                   paddingRight: 40,
+                  paddingTop: 8,
+                  paddingBottom: 8,
                   borderColor: '#25D16A',
                   backgroundColor: this.state.myanswer === 0 ? '#25D16A' : '#FFf', 
                   alignSelf:'baseline',
@@ -123,6 +130,8 @@ export default class Kuis extends Component{
                   backgroundColor: this.state.myanswer === 1 ? '#25D16A' : '#FFf', 
                   borderRadius: 10, borderWidth: 2,
                   paddingLeft: 40,
+                  paddingTop: 8,
+                  paddingBottom: 8,
                   paddingRight: 40,
                   alignItems: 'center',
                   borderColor: '#25D16A',
@@ -139,6 +148,8 @@ export default class Kuis extends Component{
                   marginTop: 30,
                   backgroundColor: this.state.myanswer === 2 ? '#25D16A' : '#FFf', 
                   paddingLeft: 40,
+                  paddingTop: 8,
+                  paddingBottom: 8,
                   paddingRight: 40,
                   borderRadius: 10, borderWidth: 2,
                   alignItems: 'center',
@@ -157,6 +168,8 @@ export default class Kuis extends Component{
                   backgroundColor: this.state.myanswer === 3 ? '#25D16A' : '#FFf', 
                   paddingLeft: 40,
                   paddingRight: 40,
+                  paddingTop: 8,
+                  paddingBottom: 8,
                   borderRadius: 10, borderWidth: 2,
                   alignItems: 'center',
                   borderColor: '#25D16A',
@@ -174,6 +187,8 @@ export default class Kuis extends Component{
                   backgroundColor: this.state.myanswer === 4 ? '#25D16A' : '#FFf', 
                   paddingLeft: 40,
                   paddingRight: 40,
+                  paddingTop: 8,
+                  paddingBottom: 8,
                   borderRadius: 10, borderWidth: 2,
                   alignItems: 'center',
                   borderColor: '#25D16A',

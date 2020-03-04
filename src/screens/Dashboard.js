@@ -20,6 +20,9 @@ const Dashboard = ({ navigation }) => (
     <ButtonKuis mode="contained" onPress={() => navigation.navigate('Kuis')}>
       Quis
     </ButtonKuis>
+    <ButtonMateri mode="contained" onPress={() => navigation.navigate('AboutUs')}>
+      Tentang Kami
+    </ButtonMateri>
   </Loginbackground>
 );
 
