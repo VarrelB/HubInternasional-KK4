@@ -12,6 +12,7 @@ export default class LatihanSoal extends Component{
       b:'',
       c:'',
       d:'',
+      e:'',
       jawaban:'',
       myanswer:'',
       soalke: '',
@@ -26,7 +27,6 @@ export default class LatihanSoal extends Component{
     const { params } = this.props.navigation.state;
     const soalke = params ? params.nomer : 0
     const token = await AsyncStorage.getItem('TOKEN')
-    console.log(token)
     fetch('http://3.92.200.123:9000/api/varrel/soal/v1?type=latihan', {
         method: 'GET',
         headers: {
@@ -47,6 +47,7 @@ export default class LatihanSoal extends Component{
             b: responseJson.data[soalke].pilihan[1],
             c: responseJson.data[soalke].pilihan[2],
             d:responseJson.data[soalke].pilihan[3],
+            e: responseJson.data[soalke].pilihan[4],
             jawaban: responseJson.data[soalke].jawaban,
             soalke: soalke,
             max: responseJson.data.length,
@@ -151,6 +152,24 @@ export default class LatihanSoal extends Component{
                 <Text style={{
                   color: this.state.myanswer === 3 ? '#FFF' : '#25D16A',
                   fontSize: 18}}>{this.state.d}</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=>this._choice(4)}>
+              <View style={{ 
+                  width: 280,
+                  marginTop: 30,
+                  backgroundColor: this.state.myanswer === 4 ? '#25D16A' : '#FFf', 
+                  paddingLeft: 40,
+                  paddingRight: 40,
+                  borderRadius: 10,
+                  borderWidth: 2,
+                  alignItems: 'center',
+                  borderColor: '#25D16A',
+                  alignSelf:'baseline',
+                  justifyContent: 'center'}}>
+                <Text style={{
+                  color: this.state.myanswer === 4 ? '#FFF' : '#25D16A',
+                  fontSize: 18}}>{this.state.e}</Text>
               </View>
             </TouchableOpacity>
           </View>

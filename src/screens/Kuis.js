@@ -22,7 +22,6 @@ export default class Kuis extends Component{
   }
   _getData = async () => {
     const token = await AsyncStorage.getItem('TOKEN')
-    console.log(token)
     let response = await fetch('http://3.92.200.123:9000/api/varrel/soal/v1?type=quiz', {
         method: 'GET',
         headers: {
@@ -51,6 +50,8 @@ export default class Kuis extends Component{
     })
   }
   _next = () =>{
+    console.log(this.state.data.length)
+    console.log(this.state.soalke)
     if(this.state.allanswer.length ===0){
       this.setState({
         soalke: this.state.soalke + 1,
@@ -58,7 +59,12 @@ export default class Kuis extends Component{
         myanswer: '',
   
       })
-    }else{
+    }else if(this.state.data.length === this.state.soalke + 1){
+      const myanswer = this.state.allanswer
+      const allanswer = this.state.jawaban
+      this.props.navigation.navigate('Nilai', {myanswer , allanswer})
+    }
+    else{
       this.state.allanswer[this.state.soalke] = this.state.myanswer
       this.setState({
         soalke: this.state.soalke + 1,
@@ -160,6 +166,23 @@ export default class Kuis extends Component{
                 <Text style={{
                   color: this.state.myanswer === 3 ? '#FFF' : '#25D16A',
                 fontSize: 18}}>{this.state.data[this.state.soalke].pililhan[3]}</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=>this._choice(4)}>
+              <View style={{ 
+                  width: 280,
+                  marginTop: 30,
+                  backgroundColor: this.state.myanswer === 4 ? '#25D16A' : '#FFf', 
+                  paddingLeft: 40,
+                  paddingRight: 40,
+                  borderRadius: 10, borderWidth: 2,
+                  alignItems: 'center',
+                  borderColor: '#25D16A',
+                  alignSelf:'baseline',
+                  justifyContent: 'center'}}>
+                <Text style={{
+                  color: this.state.myanswer === 4 ? '#FFF' : '#25D16A',
+                fontSize: 18}}>{this.state.data[this.state.soalke].pililhan[4]}</Text>
               </View>
             </TouchableOpacity>
           </View>
