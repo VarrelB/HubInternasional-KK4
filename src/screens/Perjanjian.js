@@ -4,11 +4,11 @@ import BackButton from '../components/BackButton';
 import {  Text, ScrollView, View } from 'react-native';
 
 const Perjanjian = ({ navigation }) => (
-    <Loginbackground>
+    <View>
                <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
             <BackButton goBack={() => navigation.navigate('Materi')} />
        </View>
-    <ScrollView>
+    <ScrollView style={{ paddingRight: 50, paddingLeft: 50}}>
     <Text>{"\n"}
       {"\n"}{"\n"}{"\n"}
 B. Perjanjian Internasional{"\n"}
@@ -99,7 +99,7 @@ Syarat-syarat tentang pengakhiran perjanjian sesuai dengan ketentuan perjanjian 
 Perjanjian secara sepihak diakhiri oleh salah satu peserta dan pengakhiran itu diterima oleh pihak lain.{"\n"}
 </Text>
 </ScrollView>
-</Loginbackground>
+</View>
 );
 
 export default memo(Perjanjian);

@@ -5,11 +5,11 @@ import BackButton from '../components/BackButton';
 
 
 const Organisasi = ({ navigation }) => (
-    <Loginbackground>
+    <View>
         <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
             <BackButton goBack={() => navigation.navigate('Materi')} />
        </View>
-    <ScrollView>
+    <ScrollView style={{paddingRight: 50, paddingLeft: 50}}>
     <Text>{"\n"}
       {"\n"}{"\n"}{"\n"}
 ORGANISASI INTERNASIONAL{"\n"}
@@ -109,7 +109,7 @@ Selain negara-negara anggota tersebut, terdapat dua negara lainnya yang berstatu
 4) Dokumen persetujuan ini kemudian dikenal dengan sebutan Agreement on the Establishment of the ASEAN Secretariate yang antara lain menyatakan bahwa tempat kedudukan Sekretariat ASEAN berada di Jakarta, ibukota negara Indonesia.{"\n"}
  </Text>
 </ScrollView>
-</Loginbackground>
+</View>
 );
 
 export default memo(Organisasi);

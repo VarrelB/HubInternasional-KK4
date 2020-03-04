@@ -5,11 +5,11 @@ import {  Text, ScrollView, View } from 'react-native';
 import BackButton from '../components/BackButton';
 
 const Asas = ({ navigation }) => (
-  <Loginbackground>
+  <View>
       <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
         <BackButton goBack={() => navigation.navigate('Materi')} />
       </View>
-      <ScrollView>
+      <ScrollView style={{paddingRight: 50, paddingLeft: 50}}>
       <Text>
       {"\n"}
       {"\n"}{"\n"}{"\n"}
@@ -24,7 +24,7 @@ Setiap warga negara di manapun berada tetap mendapat perlakuan hukum dari negara
 Wewenang negara untuk melindungi dan mengatur kepentingan dalam kehidupan bermasyarakat. Negara dapat beradaptasi dengan semua keadaan dan peristiwa yang bersangkutan dengan kepentingan umum.{"\n"}
 {"\n"}</Text>
   </ScrollView>
-  </Loginbackground>
+  </View>
 );
 
 export default memo(Asas);

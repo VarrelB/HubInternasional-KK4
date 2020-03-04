@@ -98,12 +98,12 @@ export default class Kuis extends Component{
               <Text style={{ fontSize: 20,color: "#fff"}}>KUIS</Text>
           </View>
         </View>
-        <Text style={{ marginTop: 100, paddingLeft: 50, borderBottomColor: '#283293', borderBottomWidth: 1}}>{`Latihan ${this.state.soalke +1}/${this.state.data.length}`}</Text>
+        <Text style={{ marginTop: 50, paddingLeft: 50, borderBottomColor: '#283293', borderBottomWidth: 1}}>{`Latihan ${this.state.soalke +1}/${this.state.data.length}`}</Text>
         <ScrollView>
           <View style={{ paddingLeft: 33, paddingRight: 33, marginTop:30}}>
             <Text>{this.state.data[this.state.soalke].title}</Text>
           </View>
-          <View style={{ paddingLeft: 48, paddingRight: 48, marginTop: 50}}>
+          <View style={{ flex: 1, alignItems: 'center', marginTop: 50}}>
             <TouchableOpacity onPress={()=>this._choice(0)}>
               <View style={{ 
                   width: 280,

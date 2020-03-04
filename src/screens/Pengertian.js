@@ -5,11 +5,11 @@ import Hubint from '../components/Hubint';
 import BackButton from '../components/BackButton';
 
 const Pengertian = ({ navigation }) => (
-    <Loginbackground>
+    <View>
                 <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
             <BackButton goBack={() => navigation.navigate('Materi')} />
        </View>
-    <ScrollView>
+    <ScrollView style={{paddingLeft: 50, paddingRight: 50}}>
         <Text>{"\n"}
       {"\n"}{"\n"}{"\n"}</Text>
         <Hubint/>
@@ -97,7 +97,7 @@ Pertahanan, hal ini diperlukan untuk menjaga kemungkinan serangan dari luar. Unt
 Australia dan Indonesia adalah sebuah negara yang pastinya telah melalui beberapa unsur tersebut. Sebagai sebuah negara, Australia dan Indonesia pastilah memiliki tujuan dan kepentingan yang berbeda, sesuai dengan kebutuhan masing masing negara. Salah satunya yang berkaitan dengan apa yang akan diteliti yaitu misalnya dalam bidang maritim adalah kepentingan Australia untuk memberlakukan Australia’s Maritime Identification Zone (AMIZ). Untuk menjaga wilayah disekitar Australia. Namun pihak Indonesia tidak setuju dengan diberlakukannya Australia’s Maritime Identification Zone (AMIZ) karena terdapat konsep yang kurang tepat didalam AMIZ tersebut, sehingga tidak dapat diterima oleh pihak Indonesia
 {"\n"}</Text>
 </ScrollView>
-</Loginbackground>
+</View>
 );
 
 export default memo(Pengertian);

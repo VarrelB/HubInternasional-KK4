@@ -4,11 +4,11 @@ import {  Text, ScrollView,View  } from 'react-native';
 import BackButton from '../components/BackButton';
 
 const Pentingnya = ({ navigation }) => (
-    <Loginbackground>
+    <View>
                 <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
             <BackButton goBack={() => navigation.navigate('Materi')} />
        </View>
-    <ScrollView>
+    <ScrollView style={{ paddingLeft: 50, paddingRight: 50}}>
     <Text>{"\n"}
       {"\n"}{"\n"}{"\n"}
 PENTINGNYA HUBUNGAN INTERNASIONAL{"\n"}
@@ -84,7 +84,7 @@ Melindungi kepentingan negara dan warga negaranya di luar negeri.{"\n"}
  </Text>
  
 </ScrollView>
-</Loginbackground>
+</View>
 );
 
 export default memo(Pentingnya);

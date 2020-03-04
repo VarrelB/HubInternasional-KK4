@@ -4,11 +4,11 @@ import Loginbackground from '../components/Loginbackground';
 import { Text, ScrollView, View } from 'react-native';
 
 const Perwakilan = ({ navigation }) => (
-    <Loginbackground>
+    <View>
                 <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
             <BackButton goBack={() => navigation.navigate('Materi')} />
        </View>
-    <ScrollView>
+    <ScrollView style={{ paddingLeft: 50, paddingRight: 50}}>
     <Text>{"\n"}
       {"\n"}{"\n"}{"\n"}
 D. PERWAKILAN NEGERA RI DI LUAR NEGERI{"\n"}
@@ -83,7 +83,7 @@ Perwakilan Konsuler adalah lembaga kenegaraan di luar negeri yang bertugas dalam
 Pejabat perwakilan organisasi internasional adalah pejabat yang diangkat atau ditunjuk langsung oleh induk organisasi internasional yang bersangkutan untuk menjalankan tugas atau jabatan pada kantor perwakilan organisasi internasional tersebut di Indonesia.{"\n"}
  </Text>
 </ScrollView>
-</Loginbackground>
+</View>
 );
 
 export default memo(Perwakilan);

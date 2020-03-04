@@ -49,7 +49,7 @@ const Router = createStackNavigator(
     AboutUs
   },
   {
-    initialRouteName: 'HomeScreen',
+    initialRouteName: 'Dashboard',
     headerMode: 'none',
   }
 );

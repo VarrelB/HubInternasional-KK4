@@ -5,11 +5,12 @@ import Pol from '../components/Pol';
 import BackButton from '../components/BackButton';
 
 const Politik = ({ navigation }) => (
-    <Loginbackground>
-    <ScrollView>
-    <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
+    <View>
+      <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
             <BackButton goBack={() => navigation.navigate('Materi')} />
        </View>
+    <ScrollView style={{ paddingLeft: 50, paddingRight: 50}}>
+    
     <Text>{"\n"}
       {"\n"}{"\n"}{"\n"}</Text>
     <Pol/>
@@ -77,7 +78,7 @@ Contoh pelaksanaan politik luar negeri Indonesia :{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}
  
 </Text>
 </ScrollView>
-</Loginbackground>
+</View>
 );
 
 export default memo(Politik);

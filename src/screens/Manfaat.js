@@ -4,11 +4,11 @@ import { Text, ScrollView, View } from 'react-native';
 import BackButton from '../components/BackButton';
 
 const Manfaat = ({ navigation }) => (
-    <Loginbackground>
+    <View>
         <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
             <BackButton goBack={() => navigation.navigate('Materi')} />
        </View>
-    <ScrollView>
+    <ScrollView style={{paddingLeft: 50, paddingRight: 50}}>
     <Text> {"\n"}
       {"\n"}{"\n"}{"\n"}
 F. MANFAAT KERJASAMA DAN PERJANJIAN INTERNASIONAL Manfaat Kerja sama Internasional bagi Indonesia :{"\n"}
@@ -33,7 +33,7 @@ d. Penggalangan dan pemupukan solidaritas, kesatuan, dan sikap kerjasama diantar
 e. Meningkatkan kegiatan ekonomi melalui perdagangan ekspor dan impor, tukar menukar ilmu pengetahuan dan teknologi{"\n"}
 </Text>
 </ScrollView>
-</Loginbackground>
+</View>
 );
 
 export default memo(Manfaat);
