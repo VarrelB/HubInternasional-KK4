@@ -78,7 +78,9 @@ export default class LatihanSoal extends Component{
   render(){
     return(
      <View style={{flex:1}}>
-        <BackButton goBack={()=> this.props.navigation.navigate('')}/>
+       <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
+        <BackButton goBack={()=> this.props.navigation.navigate('Dashboard')}/>
+       </View>
         <Text style={{ marginTop: 100, paddingLeft: 50, borderBottomColor: '#283293', borderBottomWidth: 1}}>{`Latihan ${this.state.soalke +1}/${this.state.max}`}</Text>
         <ScrollView>
           <View style={{ paddingLeft: 33, paddingRight: 33, marginTop:30}}>

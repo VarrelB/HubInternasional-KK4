@@ -1,13 +1,15 @@
 import React, { memo } from 'react';
 import Loginbackground from '../components/Loginbackground';
-import {  Text, ScrollView } from 'react-native';
+import {  Text, ScrollView, View } from 'react-native';
 import Pol from '../components/Pol';
 import BackButton from '../components/BackButton';
 
 const Politik = ({ navigation }) => (
     <Loginbackground>
     <ScrollView>
-    <BackButton goBack={() => navigation.navigate('Materi')} />
+    <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
+            <BackButton goBack={() => navigation.navigate('Materi')} />
+       </View>
     <Text>{"\n"}
       {"\n"}{"\n"}{"\n"}</Text>
     <Pol/>

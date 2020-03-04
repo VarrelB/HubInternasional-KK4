@@ -1,11 +1,13 @@
 import React, { memo } from 'react';
 import Loginbackground from '../components/Loginbackground';
 import BackButton from '../components/BackButton';
-import {  Text, ScrollView } from 'react-native';
+import {  Text, ScrollView, View } from 'react-native';
 
 const Perjanjian = ({ navigation }) => (
     <Loginbackground>
-        <BackButton goBack={() => navigation.navigate('Materi')} />
+               <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
+            <BackButton goBack={() => navigation.navigate('Materi')} />
+       </View>
     <ScrollView>
     <Text>{"\n"}
       {"\n"}{"\n"}{"\n"}

@@ -57,7 +57,6 @@ const RegisterScreen = ({ navigation }) => {
 
   return (
     <Loginbackground>
-      <BackButton goBack={() => navigation.navigate('HomeScreen')} />
 
       <Logo />
 

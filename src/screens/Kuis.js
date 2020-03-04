@@ -93,7 +93,6 @@ export default class Kuis extends Component{
     }
     return(
      <View style={{flex:1}}>
-        <BackButton goBack={()=> this.props.navigation.navigate('')}/>
         <Text style={{ marginTop: 100, paddingLeft: 50, borderBottomColor: '#283293', borderBottomWidth: 1}}>{`Latihan ${this.state.soalke +1}/${this.state.data.length}`}</Text>
         <ScrollView>
           <View style={{ paddingLeft: 33, paddingRight: 33, marginTop:30}}>

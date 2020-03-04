@@ -1,12 +1,14 @@
 import React, { memo } from 'react';
 import Loginbackground from '../components/Loginbackground';
-import {  Text, ScrollView } from 'react-native';
+import {  Text, ScrollView,View } from 'react-native';
 import Hubint from '../components/Hubint';
 import BackButton from '../components/BackButton';
 
 const Pengertian = ({ navigation }) => (
     <Loginbackground>
-        <BackButton goBack={() => navigation.navigate('Materi')} />
+                <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
+            <BackButton goBack={() => navigation.navigate('Materi')} />
+       </View>
     <ScrollView>
         <Text>{"\n"}
       {"\n"}{"\n"}{"\n"}</Text>

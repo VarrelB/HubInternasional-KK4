@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { WebView } from 'react-native';
+import { WebView, View } from 'react-native';
 import Background from '../components/Background';
 import Logo from '../components/Logo';
 import Header from '../components/Header';
@@ -8,7 +8,9 @@ import BackButton from '../components/BackButton';
 
 const Video = ({ navigation }) => (
   <Background>
-    <BackButton goBack={() => navigation.navigate('Materi')} />
+   <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
+            <BackButton goBack={() => navigation.navigate('Materi')} />
+       </View>
     <WebView
       style={{flex:1}}
       javaScriptEnabled={true}

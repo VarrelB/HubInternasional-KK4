@@ -1,12 +1,17 @@
 import React, { memo } from 'react';
+import {  Text, ScrollView, View } from 'react-native';
+
 import Loginbackground from '../components/Loginbackground';
 import ButtonMateri from '../components/ButtonMateri';
 import ButtonKuis from '../components/ButtonKuis';
 import ButtonLatSoal from '../components/ButtonLatSoal';
+import BackButton from '../components/BackButton';
 
 const Materi = ({ navigation }) => (
   <Loginbackground>
-
+        <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
+          <BackButton goBack={()=> navigation.navigate('Dashboard')}/>
+       </View>
     <ButtonMateri mode="contained" onPress={() => navigation.navigate('Pengertian')}>
       Pengertian
     </ButtonMateri>
