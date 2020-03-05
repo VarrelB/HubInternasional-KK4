@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View,Text, Image, TouchableOpacity, AsyncStorage } from 'react-native';
+import { View,Text, Image, TouchableOpacity, AsyncStorage, Alert } from 'react-native';
 import BackButton from '../components/BackButton';
 import { ScrollView } from 'react-native-gesture-handler';
 import { ActivityIndicator } from 'react-native-paper';
@@ -53,24 +53,40 @@ export default class Kuis extends Component{
     console.log(this.state.data.length)
     console.log(this.state.soalke)
     if(this.state.allanswer.length ===0){
-      this.setState({
-        soalke: this.state.soalke + 1,
-        allanswer: [...this.state.allanswer, this.state.myanswer],
-        myanswer: '',
-  
-      })
+      if(this.state.myanswer == ''){
+        Alert.alert('Pilih dulu jawabannya')
+      }else{
+        this.setState({
+          soalke: this.state.soalke + 1,
+          allanswer: [...this.state.allanswer, this.state.myanswer],
+          myanswer: '',
+    
+        })
+      }
+     
     }else if(this.state.data.length === this.state.soalke + 1){
-      const myanswer = this.state.allanswer
-      const allanswer = this.state.jawaban
-      this.props.navigation.navigate('Nilai', {myanswer , allanswer})
+      if(this.state.myanswer == ''){
+        Alert.alert('Pilih dulu jawabannya')
+
+      }else{
+        const myanswer = this.state.allanswer
+        const allanswer = this.state.jawaban
+        this.props.navigation.navigate('Nilai', {myanswer , allanswer})
+      }
+      
     }
     else{
-      this.state.allanswer[this.state.soalke] = this.state.myanswer
-      this.setState({
-        soalke: this.state.soalke + 1,
-        myanswer: this.state.allanswer.length-1 - this.state.soalke ===0 ? '' : this.state.allanswer[this.state.soalke +1]
-  
-      })
+      if(this.state.myanswer == ''){
+        Alert.alert('Pilih dulu jawabannya')
+
+      }else{
+        this.state.allanswer[this.state.soalke] = this.state.myanswer
+        this.setState({
+          soalke: this.state.soalke + 1,
+          myanswer: this.state.allanswer.length-1 - this.state.soalke ===0 ? '' : this.state.allanswer[this.state.soalke +1]
+    
+        })
+      }   
     }
     
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View,Text, Image, TouchableOpacity, AsyncStorage } from 'react-native';
+import { View,Text, Image, TouchableOpacity, AsyncStorage, Alert } from 'react-native';
 import BackButton from '../components/BackButton';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -68,12 +68,17 @@ export default class LatihanSoal extends Component{
   }
   _pembahasan = () =>{
     // if(this.state.max > this.state.soalke + 1){
-      const nomer = this.state.soalke
-      const myanswer = this.state.myanswer
-      const jawaban = this.state.jawaban
-      const Pembahasan = this.state.Pembahasan
-      const max = this.state.max
-      this.props.navigation.navigate('Pembahasan',{ nomer , myanswer, jawaban ,Pembahasan, max})
+      if(this.state.myanswer == ''){
+        Alert.alert('Pilih dulu jawabannya')
+      }else{
+        const nomer = this.state.soalke
+        const myanswer = this.state.myanswer
+        const jawaban = this.state.jawaban
+        const Pembahasan = this.state.Pembahasan
+        const max = this.state.max
+        this.props.navigation.navigate('Pembahasan',{ nomer , myanswer, jawaban ,Pembahasan, max})
+      }
+      
   }
   render(){
     return(
