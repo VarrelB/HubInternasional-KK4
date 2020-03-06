@@ -21,49 +21,49 @@ export default class Kuis extends Component{
             <View style={{ marginTop: 40,width: 323, alignSelf: 'baseline', flexDirection: 'row', marginLeft: 26, borderWidth: 1, borderColor: '#EBEBEB', elevation: 5, borderRadius: 10,padding: 20}}>
                 <Image style={{ width: 100 , height: 100}} source={require('../assets/ppl.png')} />
                 <View style={{ marginLeft: 12}}>
-                    <Text>gawang</Text>
-                    <Text>ganteng</Text>
-                    <Text>bgt</Text>
+                    <Text>Yakob Krisna Putra</Text>
+                    <Text>Designer</Text>
+                    <Text>yakobkrisna@gmail.com</Text>
                 </View>
             </View>
             <View style={{ marginTop: 40,width: 323, alignSelf: 'baseline', flexDirection: 'row', marginLeft: 26, borderWidth: 1, borderColor: '#EBEBEB', elevation: 5, borderRadius: 10,padding: 20}}>
                 <Image style={{ width: 100 , height: 100}} source={require('../assets/ppl.png')} />
                 <View style={{ marginLeft: 12}}>
-                    <Text>gawang</Text>
-                    <Text>ganteng</Text>
-                    <Text>bgt</Text>
+                    <Text>Sekar Sari Farida</Text>
+                    <Text>Front-End Developer</Text>
+                    <Text>ssarie937@gmail.com</Text>
                 </View>
             </View>
             <View style={{ marginTop: 40,width: 323, alignSelf: 'baseline', flexDirection: 'row', marginLeft: 26, borderWidth: 1, borderColor: '#EBEBEB', elevation: 5, borderRadius: 10,padding: 20}}>
                 <Image style={{ width: 100 , height: 100}} source={require('../assets/ppl.png')} />
                 <View style={{ marginLeft: 12}}>
-                    <Text>gawang</Text>
-                    <Text>ganteng</Text>
-                    <Text>bgt</Text>
+                    <Text>Rizky Eventa Bahtiar</Text>
+                    <Text>Back-End Developer</Text>
+                    <Text>rizkyventa00@gmail.com</Text>
                 </View>
             </View>
             <View style={{ marginTop: 40,width: 323, alignSelf: 'baseline', flexDirection: 'row', marginLeft: 26, borderWidth: 1, borderColor: '#EBEBEB', elevation: 5, borderRadius: 10,padding: 20}}>
                 <Image style={{ width: 100 , height: 100}} source={require('../assets/ppl.png')} />
                 <View style={{ marginLeft: 12}}>
-                    <Text>gawang</Text>
-                    <Text>ganteng</Text>
-                    <Text>bgt</Text>
+                    <Text>Varrel Bramasta Nugraha</Text>
+                    <Text>Back-End Developer</Text>
+                    <Text>varreldanvarrel@gmail.com</Text>
                 </View>
             </View>
             <View style={{ marginTop: 40,width: 323, alignSelf: 'baseline', flexDirection: 'row', marginLeft: 26, borderWidth: 1, borderColor: '#EBEBEB', elevation: 5, borderRadius: 10,padding: 20}}>
                 <Image style={{ width: 100 , height: 100}} source={require('../assets/ppl.png')} />
                 <View style={{ marginLeft: 12}}>
-                    <Text>gawang</Text>
-                    <Text>ganteng</Text>
-                    <Text>bgt</Text>
+                    <Text>Symisius Lintang Ranataru</Text>
+                    <Text>Content Creator</Text>
+                    <Text>symisius1233@gmail.com</Text>
                 </View>
             </View>
             <View style={{ marginTop: 40,width: 323, alignSelf: 'baseline', flexDirection: 'row', marginLeft: 26, borderWidth: 1, borderColor: '#EBEBEB', elevation: 5, borderRadius: 10,padding: 20}}>
                 <Image style={{ width: 100 , height: 100}} source={require('../assets/ppl.png')} />
                 <View style={{ marginLeft: 12}}>
-                    <Text>gawang</Text>
-                    <Text>ganteng</Text>
-                    <Text>bgt</Text>
+                    <Text>Zulfa Basmallah Agustyn</Text>
+                    <Text>Analyst</Text>
+                    <Text>zullfaba15@gmail.com</Text>
                 </View>
             </View>
         </ScrollView>

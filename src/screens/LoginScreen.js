@@ -1,6 +1,5 @@
 import React, { memo, useState } from 'react';
 import { TouchableOpacity, StyleSheet, Text, View, ToastAndroid, AsyncStorage } from 'react-native';
-import * as SecureStore from 'expo-secure-store';
 import Loginbackground from '../components/Loginbackground';
 import Header from '../components/Header';
 import Button from '../components/Button';
