@@ -68,7 +68,7 @@ export default class LatihanSoal extends Component{
   }
   _pembahasan = () =>{
     // if(this.state.max > this.state.soalke + 1){
-      if(this.state.myanswer == ''){
+      if(this.state.myanswer.length === 0){
         Alert.alert('Pilih dulu jawabannya')
       }else{
         const nomer = this.state.soalke

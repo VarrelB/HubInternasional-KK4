@@ -58,7 +58,7 @@ export default class Kuis extends Component{
                     <Text>symisius1233@gmail.com</Text>
                 </View>
             </View>
-            <View style={{ marginTop: 40,width: 323, alignSelf: 'baseline', flexDirection: 'row', marginLeft: 26, borderWidth: 1, borderColor: '#EBEBEB', elevation: 5, borderRadius: 10,padding: 20}}>
+            <View style={{ marginBottom: 100, marginTop: 40,width: 323, alignSelf: 'baseline', flexDirection: 'row', marginLeft: 26, borderWidth: 1, borderColor: '#EBEBEB', elevation: 5, borderRadius: 10,padding: 20}}>
                 <Image style={{ width: 100 , height: 100}} source={require('../assets/ppl.png')} />
                 <View style={{ marginLeft: 12}}>
                     <Text>Zulfa Basmallah Agustyn</Text>

@@ -53,7 +53,7 @@ export default class Kuis extends Component{
     console.log(this.state.data.length)
     console.log(this.state.soalke)
     if(this.state.allanswer.length ===0){
-      if(this.state.myanswer == ''){
+      if(this.state.myanswer.length === 0){
         Alert.alert('Pilih dulu jawabannya')
       }else{
         this.setState({
@@ -65,7 +65,7 @@ export default class Kuis extends Component{
       }
      
     }else if(this.state.data.length === this.state.soalke + 1){
-      if(this.state.myanswer == ''){
+      if(this.state.myanswer.length === 0){
         Alert.alert('Pilih dulu jawabannya')
 
       }else{
@@ -76,7 +76,7 @@ export default class Kuis extends Component{
       
     }
     else{
-      if(this.state.myanswer == ''){
+      if(this.state.myanswer.length === 0){
         Alert.alert('Pilih dulu jawabannya')
 
       }else{
