@@ -1,21 +1,19 @@
 import React, { memo } from 'react';
-import { WebView, View } from 'react-native';
-import Background from '../components/Background';
-import Logo from '../components/Logo';
-import Header from '../components/Header';
+import Loginbackground from '../components/Loginbackground';
 import BackButton from '../components/BackButton';
-
+import {  Text, ScrollView, View, TouchableOpacity, Linking } from 'react-native';
 
 const Video = ({ navigation }) => (
   <View>
     <View style={{ width :'100%', backgroundColor: '#21BF73', height: 70}}>
       <BackButton goBack={() => navigation.navigate('Materi')} />
     </View>
-      <WebView
-      style={{flex:1}}
-      javaScriptEnabled={true}
-      source={{uri: 'https://www.youtube.com/embed/ZZ5LpwO-An4?rel=0&autoplay=0&showinfo=0&controls=0'}}
-    />
+    <ScrollView style={{ paddingRight: 50, paddingLeft: 50}}>
+      <Text>{"\n"}{"\n"}{"\n"}{"\n"}Silahkan simak video tentang Hubungan Internasional di link ini{"\n"}</Text>
+      <TouchableOpacity>
+        <Text  onPress={() => Linking.openURL('https://www.youtube.com/watch?v=ZfmsnZVPLIM')}>https://www.youtube.com/watch?v=ZfmsnZVPLIM</Text>
+      </TouchableOpacity>
+    </ScrollView>
   </View>
 );
 

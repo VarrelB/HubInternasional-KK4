@@ -55,7 +55,7 @@ const LoginScreen = ({ navigation }) => {
     <Loginbackground>
       
       <Logo />
-      <Header>E-book PPKN</Header>
+      <Header>PPkn Hubin</Header>
 
       <TextInput
         label="Email"

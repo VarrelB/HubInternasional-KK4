@@ -1,32 +1,17 @@
 {
   "expo": {
-    "name": "Hubungan Internasional",
-    "slug": "react-native-simple-login-template",
-    "privacy": "public",
-    "sdkVersion": "35.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "description": "Simple login template created with React Native.",
-    "githubUrl": "https://github.com/venits/react-native-login-template"
+   "name": "PPKn Hubin",
+   "icon": "./assets/logo.png",
+   "version": "1.0.0",
+   "slug": "hubbin-app-slug",
+   "sdkVersion": "35.0.0",
+   "ios": {
+     "bundleIdentifier": "com.hubin.quizhubin",
+     "buildNumber": "1.0.0"
+   },
+   "android": {
+     "package": "com.hubin.quizhubin",
+     "versionCode": 1
+   }
   }
 }
