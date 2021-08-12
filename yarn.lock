@@ -4416,9 +4416,9 @@ path-key@^2.0.0, path-key@^2.0.1:
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
 path-parse@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
-  integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
+  integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
 path-to-regexp@^1.7.0:
   version "1.7.0"
@@ -4769,6 +4769,11 @@ react-native-paper@^3.0.0:
     color "^3.1.2"
     react-native-safe-area-view "^0.12.0"
 
+react-native-player@0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/react-native-player/-/react-native-player-0.0.9.tgz#be5247f3a8a2fccf53828accc31dd7e09d353401"
+  integrity sha1-vlJH86ii/M9TgorMwx3X4J01NAE=
+
 react-native-safe-area-view@^0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.12.0.tgz#5c312f087300ecf82e8541c3eac25d560e147f22"
@@ -4811,6 +4816,11 @@ react-native-vector-icons@^6.6.0:
     lodash "^4.0.0"
     prop-types "^15.6.2"
     yargs "^13.2.2"
+
+react-native-video-player@^0.10.0:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/react-native-video-player/-/react-native-video-player-0.10.1.tgz#818e1aa18e724a2553095efa5c3ccd506f5a33ef"
+  integrity sha512-VUTNHzpj81RSvR8nST+8LGhYpaMbs5ePNV/YWXqh3ogfqjMOpHlf5vFabhGLJEI6Md9KjL1cQ+4gblYjgmuH2Q==
 
 react-native-video@^5.0.2:
   version "5.0.2"
