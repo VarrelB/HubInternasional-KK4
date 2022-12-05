@@ -1892,9 +1892,9 @@ decamelize@^1.1.1, decamelize@^1.2.0:
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
-  integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
+  integrity sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==
 
 deep-assign@^3.0.0:
   version "3.0.0"
@@ -4769,6 +4769,11 @@ react-native-paper@^3.0.0:
     color "^3.1.2"
     react-native-safe-area-view "^0.12.0"
 
+react-native-player@0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/react-native-player/-/react-native-player-0.0.9.tgz#be5247f3a8a2fccf53828accc31dd7e09d353401"
+  integrity sha512-Jl12/nD9q+m4Mn1i1mdDTJqE8hi+1x6ryat1bXCB5yGHgpVK6Y29F7aiHe19sV7ZkWtMA1gs2O17+XRU8pY+Wg==
+
 react-native-safe-area-view@^0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.12.0.tgz#5c312f087300ecf82e8541c3eac25d560e147f22"
@@ -4811,6 +4816,11 @@ react-native-vector-icons@^6.6.0:
     lodash "^4.0.0"
     prop-types "^15.6.2"
     yargs "^13.2.2"
+
+react-native-video-player@^0.10.0:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/react-native-video-player/-/react-native-video-player-0.10.1.tgz#818e1aa18e724a2553095efa5c3ccd506f5a33ef"
+  integrity sha512-VUTNHzpj81RSvR8nST+8LGhYpaMbs5ePNV/YWXqh3ogfqjMOpHlf5vFabhGLJEI6Md9KjL1cQ+4gblYjgmuH2Q==
 
 react-native-video@^5.0.2:
   version "5.0.2"
